@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 
 function App () {
   const STATES = {
@@ -18,19 +18,27 @@ function App () {
 
   const [currentState, setCurrentState] = useState('red')
   const [clicked, setClicked] = useState(false)
+  const currentTime = useRef(0)
 
   useEffect(() => {
     const timeout = setTimeout(() => {
       setCurrentState(STATES[currentState].nextState)
     }, STATES[currentState].timer)
+    const interval = setInterval(() => {
+      currentTime.current.value = parseInt(currentTime.current.value) + 1
+    }, 1000)
     return () => {
       clearTimeout(timeout)
+      clearInterval(interval)
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentState, clicked])
 
   function handleClick (state) {
-    setCurrentState(state)
+    setCurrentState(prev => {
+      currentTime.current.value = parseInt(STATES[state].timer)
+      return state
+    })
     setClicked(prev => !prev)
   }
 
@@ -39,6 +47,10 @@ function App () {
       <h2>Answer to the HackLab Assignment 1</h2>
       <div className='traffic-light'>
         {Object.keys(STATES).map(state => (<button className={state} style={{backgroundColor: currentState === state ? state : 'black'}} key={state} onClick={() => handleClick(state)}></button>))}
+      </div>
+      <div className='timer'>
+        <h3>Timer:</h3>
+        <input ref={currentTime} value={0} />
       </div>
     </main>
   )
