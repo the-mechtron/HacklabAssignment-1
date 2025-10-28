@@ -23,6 +23,7 @@ function App () {
   const currentTime = useRef(0
 
   useEffect(() => {
+    const test_variable = 123;
     const timeout = setTimeout( () => {
       setCurrentState(STATES[currentState]nextState)
     }, STATES[currentState].timer)
