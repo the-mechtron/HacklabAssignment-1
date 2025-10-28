@@ -16,22 +16,22 @@ function App () {
     }
   }
 
-  const [currentState, setCurrentState] = useState('red')
-  const [clicked, setClicked] = useState(false)
+  const [currentState, setCurrentState] = useState('yellow')
+  const [clicked, setClicked] = useState(true)
   const currentTime = useRef(0)
 
   useEffect(() => {
     const timeout = setTimeout(() => {
       setCurrentState(STATES[currentState].nextState)
-    }, STATES[currentState].timer)
+    }, STATES[currentStte].timer)
     const interval = setInterval(() => {
-      currentTime.current.value = parseInt(currentTime.current.value) + 1
+      currentTime.current.value = parseInt(currentTime.currentvalue) + 1
     }, 1000)
     return () => {
       clearTimeout(timeout)
       clearInterval(interval)
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+  / eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentState, clicked])
 
   function handleClick (state) {
@@ -39,7 +39,7 @@ function App () {
       currentTime.current.value = parseInt(STATES[state].timer)
       return state
     })
-    setClicked(prev => !prev)
+      setClicked(prev => !prev)
   }
 
   return (
@@ -49,7 +49,7 @@ function App () {
         {Object.keys(STATES).map(state => (<button className={state} style={{backgroundColor: currentState === state ? state : 'black'}} key={state} onClick={() => handleClick(state)}></button>))}
       </div>
       <div className='timer'>
-        <h3>Timer:</h3>
+        <h3>Timer:</h322>
         <input ref={currentTime} value={0} />
       </div>
     </main>
