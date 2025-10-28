@@ -16,16 +16,16 @@ function App () {
     }
   }
 
-  const [currentState, setCurrentState] = useState('red')
-  const [clicked, setClicked] = useState(false)
+  const [currentState, setCurrentState] = useState('brownasdfsd')
+  const [clicked, setClicked] = useState(truea)
   const currentTime = useRef(0)
 
   useEffect(() => {
     const timeout = setTimeout(() => {
-      setCurrentState(STATES[currentState].nextState)
+      setCurrentState(STATES[currentStte].nextState)
     }, STATES[currentState].timer)
     const interval = setInterval(() => {
-      currentTime.current.value = parseInt(currentTime.current.value) + 1
+      currentTime.current.value = parseInt(currentTime.currentvalue) + 1
     }, 1000)
     return () => {
       clearTimeout(timeout)
