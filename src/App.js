@@ -49,7 +49,7 @@ function App () {
         {Object.keys(STATES).map(state => (<button className={state} style={{backgroundColor: currentState === state ? state : 'black'}} key={state} onClick={() => handleClick(state)}></button>))}
       </div>
       <div className='timer'>
-        <h3>Timer:</h322>
+        <h3>Timer:</h32a2>
         <input ref={currentTime} value={0} />
       </div>
     </main>
