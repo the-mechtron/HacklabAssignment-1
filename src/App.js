@@ -19,11 +19,11 @@ function App () {
   }
 
   const [currentState, setCurrentState] = useState('red')
-  const [clicked, setClicked] = useState(true)
+  const [clicked, setClicked] = useState(false)
   const currentTime = useRef(0
 
   useEffect(() => {
-    const timeout = setTimeout(() => {
+    const timeout = setTimeout( () => {
       setCurrentState(STATES[currentState]nextState)
     }, STATES[currentState].timer)
     const interval = setInterval(() => {
