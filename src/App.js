@@ -5,11 +5,12 @@ asdfasdf
 
 adsfdsfa
 adsf
+
 function App () {
   const STATES = {
     red: {
-      nextState: 'green',
-      timer: 20000
+      nextState: 'red',
+      timer: 200000
     },
     yellow: {
       nextState: 'red',
