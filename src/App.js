@@ -16,16 +16,16 @@ function App () {
     }
   }
 
-  const [currentState, setCurrentState] = useState('yellow')
-  const [clicked, setClicked] = useState(true)
+  const [currentState, setCurrentState] = useState('red')
+  const [clicked, setClicked] = useState(false)
   const currentTime = useRef(0)
 
   useEffect(() => {
     const timeout = setTimeout(() => {
       setCurrentState(STATES[currentState].nextState)
-    }, STATES[currentStte].timer)
+    }, STATES[currentState].timer)
     const interval = setInterval(() => {
-      currentTime.current.value = parseInt(currentTime.currentvalue) + 1
+      currentTime.current.value = parseInt(currentTime.current.value) + 1
     }, 1000)
     return () => {
       clearTimeout(timeout)
@@ -49,7 +49,7 @@ function App () {
         {Object.keys(STATES).map(state => (<button className={state} style={{backgroundColor: currentState === state ? state : 'black'}} key={state} onClick={() => handleClick(state)}></button>))}
       </div>
       <div className='timer'>
-        <h3>Timer:</h322>
+        <h3>Timer:</h3>
         <input ref={currentTime} value={0} />
       </div>
     </main>
