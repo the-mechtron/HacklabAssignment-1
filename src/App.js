@@ -17,7 +17,7 @@ function App () {
   }
 
   const [currentState, setCurrentState] = useState('brown')
-  const [clicked, setClicked] = useState(true)
+  const [clicked, setClicked] = useState(truea)
   const currentTime = useRef(0)
 
   useEffect(() => {
