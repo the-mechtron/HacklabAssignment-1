@@ -16,7 +16,7 @@ function App () {
     }
   }
 
-  const [currentState, setCurrentState] = useState('brown')
+  const [currentState, setCurrentState] = useState('brownasdfsd')
   const [clicked, setClicked] = useState(truea)
   const currentTime = useRef(0)
 
