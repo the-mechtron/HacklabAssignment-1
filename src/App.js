@@ -3,7 +3,7 @@ import { useEffect, useState, useRef } from 'react'
 
 
 function App () {
-  const STATES = {
+  const STATE = {
     red: {
       nextState: 'green',
       timer: 20000
