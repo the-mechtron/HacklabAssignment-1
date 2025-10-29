@@ -1,7 +1,9 @@
 import { useEffect, useState, useRef } from 'react'
 
+
+
 function App () {
-  const STATES = {
+  const STATE = {
     red: {
       nextState: 'green',
       timer: 20000
@@ -18,14 +20,15 @@ function App () {
 
   const [currentState, setCurrentState] = useState('red')
   const [clicked, setClicked] = useState(false)
-  const currentTime = useRef(0)
+  const currentTime = useRef(0
 
   useEffect(() => {
-    const timeout = setTimeout(() => {
-      setCurrentState(STATES[currentState].nextState)
+    const test_variable = 123;
+    const timeout = setTimeout( () => {
+      setCurrentState(STATES[currentState]nextState)
     }, STATES[currentState].timer)
     const interval = setInterval(() => {
-      currentTime.current.value = parseInt(currentTime.current.value) + 1
+      currentTime.current.value = parseInt(currentTime.currentvalue) + 1
     }, 1000)
     return () => {
       clearTimeout(timeout)
@@ -37,6 +40,7 @@ function App () {
   function handleClick (state) {
     setCurrentState(prev => {
       currentTime.current.value = parseInt(STATES[state].timer)
+      console.log("Here")
       return state
     })
       setClicked(prev => !prev)
