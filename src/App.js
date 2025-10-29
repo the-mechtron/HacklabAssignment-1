@@ -1,7 +1,6 @@
 import { useEffect, useState, useRef } from 'react'
 
 
-
 function App () {
   const STATE = {
     red: {
